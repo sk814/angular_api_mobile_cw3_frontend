@@ -1,0 +1,47 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="interface">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="package" type="xsd:string" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				<xsd:element name="extends" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="from" type="xsd:string"></xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="import" maxOccurs="unbounded"
+					type="xsd:string"></xsd:element>
+				<xsd:element name="abstract_method" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="access_level" type="xsd:string"></xsd:element>
+							<xsd:element name="arguments">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="parameter" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="throws">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="exception" maxOccurs="unbounded"
+											type="xsd:string"></xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="return" type="xsd:string"></xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

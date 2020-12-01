@@ -1,0 +1,23 @@
+{% extends 'virusTestingApp/base.html' %}
+{% block content %}
+
+<form method="POST">
+    <br>
+    <h1> Cov Testing Hub3 Shangri-La </h1>
+    <table>
+
+    {% csrf_token %}
+    {{ form.as_table }}
+    </table>
+    <br>
+    <div>
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+</div>
+    <button class="btn btn-secondary" type="submit">Save</button>
+</form>
+
+{% endblock %}

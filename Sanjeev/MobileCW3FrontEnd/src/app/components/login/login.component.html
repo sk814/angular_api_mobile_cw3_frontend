@@ -1,0 +1,40 @@
+<nav id="topNav" class="clearfix fixed-top navbar navbar-expand-sm navbar-light">
+    <div class="container">
+        <a class="navbar-brand">
+           <h2>
+              <b>
+                <h3 class="text-light bg-dark">Volunteer Login</h3>
+              </b>
+           </h2>
+        </a>
+        <a class="navbar-brand">
+            <div>
+              <button routerLink="" class="btn btn-outline-dark" type="submit">Signup</button>
+          </div>
+         </a>
+        </div>
+        </nav>
+
+<br><br><br>
+    <div class="card mx-auto" style="width: 25rem;">
+   <div class="card-body">
+    <form [formGroup] ="loginForm" (ngSubmit)="login()">
+ 
+    <div class="form-floating mb-5">
+        <label for="email">Email</label>  
+       <input class="form-control" formControlName="email" id="email" type="email"/>
+
+    </div>
+        <div class="form-floating mb-5">
+            <label for="password">Password</label> 
+            <input class="form-control" formControlName="password" id="password" type="password"/>
+            
+        </div>
+        <div *ngIf="errorMsg !=null">
+            <p class="text-danger"> {{errorMsg}} </p> 
+        </div>
+         <div>
+             <button class="btn btn-outline-dark" type="submit" [disabled]="!loginForm.valid">VolunteerLogin</button>
+         </div>
+</form>
+</div></div>

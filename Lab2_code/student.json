@@ -1,0 +1,35 @@
+{
+	"course": {
+		"name": {
+			"_id": "CO3102",
+			"__text": "Mobile and Webb app"
+		},
+		"teacher": {
+			"name": "Y Hong",
+			"_id": "srm13"
+		},
+		"student": [
+			{å
+				"name": "Lisa Simpson",
+				"cw1": "30",
+				"project": "80",
+				"final": "85",
+				"_id": "ls1"
+			},
+			{
+				"name": "Bart Simson",
+				"cw1": "80",
+				"project": "100",
+				"final": "82",
+				"_id": "bs1"
+			},
+			{
+				"name": "Homer Simpson",
+				"cw1": "60",
+				"project": "50",
+				"final": "90",
+				"_id": "hs1"
+			}
+		]
+	}
+}

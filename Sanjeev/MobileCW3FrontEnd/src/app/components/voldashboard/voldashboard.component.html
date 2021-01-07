@@ -1,0 +1,83 @@
+<nav id="topNav" class="clearfix fixed-top navbar navbar-expand-sm navbar-light">
+    <div class="container">
+        <a class="navbar-brand">
+           <h2>
+              <b>
+                <h3 class="text-light bg-dark">Volunteer Dashboard</h3>
+              </b>
+           </h2>
+        </a>
+        <a class="navbar-brand">
+            <div>
+              <button routerLink="/login" (click)="logout()" class="btn btn-outline-dark" type="submit">Logout</button>
+          </div>
+         </a>
+        </div>
+        </nav>
+        <br><br>
+
+        <div class="container-fluid">
+            <br>
+            <br>
+        <div class="card mx-auto" style="width: 25rem;">
+            <div class="card-header">
+                Fill Details
+            </div>
+            <div class="card-body">        
+        <form [formGroup] ="volDataForm" (ngSubmit)="volDataForms()" *ngIf="!submitted">
+                
+                 <div class="form-floating mb-2">
+                <select class="form-select" formControlName="group" id="groupId" aria-label="select group">
+                  <option *ngFor="let group of groups" [ngValue]="group">{{group}}</option>
+                </select>
+                <label for="groupId">Select Type* </label>
+                <p class="text-danger" *ngIf="(volDataForm.controls.group.touched) && volDataForm.controls.group?.errors?.required">
+                    Type is required!
+                </p>    
+            </div>
+
+            <div class="form-floating mb-2">
+                <select class="form-select" formControlName="dose" id="doesId" aria-label="select Dose">
+                  <option *ngFor="let dose of doses" [ngValue]="dose">{{dose}}</option>
+                </select>
+                <label for="doesId">Select Dose*</label>
+                <p class="text-danger" *ngIf="(volDataForm.controls.dose.touched) && volDataForm.controls.dose?.errors?.required">
+                    Dose is required!
+                </p>    
+            </div>
+
+        
+            <div *ngIf="errorMsg !=null">
+                <span class="text-danger">
+                    {{errorMsg}}
+                </span> 
+            </div>
+            <div>
+                <button class="btn btn-outline-dark" type="submit" [disabled]="!volDataForm.valid">
+                    Submit
+                </button>
+            </div>
+            
+        </form>
+        <div *ngIf="submitted">
+            <p class="text-success">
+                Now select from below options.
+            </p> 
+        </div>
+        </div>
+
+        </div>
+        </div>
+        <br>
+
+        <br>
+        <br>
+        
+            <!-- <button type="button" *ngIf="submitted" class="btn btn-outline-danger btn-block" data-toggle="button" aria-pressed="false" autocomplete="off">
+                REPORT POSITIVE!
+              </button> -->
+              <div class="d-flex justify-content-center">
+              <button type="button" (click)="sendPositiveData()" [disabled]="!submitted" class="btn btn-outline-danger btn-lg">REPORT POSITIVE!</button>:
+              <button type="button"  (click)="sendNegativeData()" [disabled]="!submitted" class="btn btn-outline-info btn-lg">Report Negative</button>:
+              <button type="button" routerLink="" [disabled]="!submitted" class="btn btn-outline-dark  btn-lg">Fill later</button>
+            </div>

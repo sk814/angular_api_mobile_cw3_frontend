@@ -1,0 +1,109 @@
+<nav id="topNav" class="clearfix fixed-top navbar navbar-expand-sm navbar-light">
+<div class="container">
+    <a class="navbar-brand">
+       <h2>
+          <b>
+            <h3 class="text-light bg-dark">Volunteer Sign up Form</h3>
+          </b>
+       </h2>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-small="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-right" id="navbarNav">
+       <ul class="navbar-nav ml-auto">
+          <li class="nav-item" style="margin-right: 5;">
+            <a *ngIf="!isVolLoggedIn" routerLink="login" class="btn btn-link" role="button" aria-pressed="true">VolunteerLogin </a>
+          </li>
+           <li class="nav-item" style="margin-right: 5;">
+            <a *ngIf="!isMakerLoggedIn" routerLink="makerlogin" class="btn btn-outline-dark" role="button" aria-pressed="true">MakerLogin</a>
+          </li>
+       </ul>
+    </div>
+ </div>
+</nav>
+
+<br>
+<br>
+<br>
+<p *ngIf="errorMsg != null && errorMsg !=''" class="alert alert-danger">{{errorMsg}}</p>
+<div class="container-fluid">
+  <div class="card mx-auto" style="width: 45rem;">
+<form [formGroup]="form" (ngSubmit)="signin()">
+    
+    <div *ngIf="form.errors" class="alert alert-danger">
+        Adult volunteer required! Thank you.
+    </div>
+    <div class="form-group">
+        <small for="username">Email*</small>
+        <input formControlName="email" id="email" type="email" class="form-control">
+        <p class="text-danger" *ngIf="(form.controls.email.touched || submitted) && form.controls.email?.errors">
+          Email is required!
+        </p>
+    </div>
+    <div class="form-group">
+        <small for="password">Password*</small>
+        <input formControlName="password" id="password" type="password" class="form-control">
+        <p class="text-danger" *ngIf="(form.controls.password.touched || submitted) && form.controls.password?.errors?.required">
+          Password is required!
+        </p>
+    </div>
+
+
+
+    <div class="form-group">
+        <small for="name">Full Name*</small>
+        <input formControlName="name" id="name" type="text" class="form-control">
+        <p class="text-danger" *ngIf="(form.controls.name.touched || submitted) && form.controls.name?.errors?.required">
+          Name is required!
+        </p>
+    </div>
+
+    <div>
+        <small>Gender*</small><br>
+        <div class="form-check-inline">
+            <small class="form-check-small">
+              <input type="radio" class="form-check-input" name="optradio">Female
+            </small>
+          </div>
+          <div class="form-check-inline">
+            <small class="form-check-small">
+              <input type="radio" class="form-check-input" name="optradio" checked>Male
+            </small>
+          </div>
+          <div class="form-check-inline">
+            <small class="form-check-small">
+              <input type="radio" class="form-check-input" name="optradio">Other
+            </small>
+          </div>
+    </div>
+    <div>
+        <small for="age">Age*</small>
+        
+        <input formControlName="age" id="age" type="number" class="form-control">
+
+        <p class="text-danger" *ngIf="(form.controls.age.touched || submitted) && form.controls.age?.errors">
+          {{form.controls.age?.errors?.required ?'age is required.':'Adult volunteer required! Thank you.'}} 
+        </p>
+    </div>
+    <div>
+        <small for="address">Address*</small>
+        <p class="text-danger" *ngIf="(form.controls.address.touched || submitted) && form.controls.address?.errors?.required">
+          Address is required!
+        </p>
+        <input formControlName="address" id="address" type="text" class="form-control">
+        
+    </div>
+    <div>
+        <small>Information about the Underlying Health Condition </small>
+        <input type="text" class="form-control">
+    </div>
+    <button class="btn btn-dark" type="submit" [disabled]="!form.valid">Signup</button>
+    <div *ngIf="isSignUp">
+      <p>Successfully Signedup!</p>
+    </div>
+</form>
+
+</div>
+
+</div>

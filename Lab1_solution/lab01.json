@@ -1,0 +1,89 @@
+{
+   "article": [
+      {
+         "author": [
+            "Michael Adams",
+            "Arthur H. M. ter Hofstede",
+            "David Edmond",
+            "Wil M. P. van der Aalst"
+         ],
+         "title": "Worklets: A service-oriented implementation of dynamic flexibility in workflows",
+         "year": "2004",
+         "startpage": "381",
+         "endpage": "401",
+         "journal": "Lecture Notes in Computer Science",
+         "publisher": "Springer"
+      },
+      {
+         "author": [
+            "G. Alonso",
+            "H. Boley",
+            "H. Kuno",
+            "V. Machiraju"
+         ],
+         "title": "Web Service: A Dummy Example",
+         "year": "1985",
+         "startpage": "381",
+         "endpage": "401",
+         "journal": "Lecture Notes in Computer Science",
+         "publisher": "Springer"
+      },
+      {
+         "author": [
+            "H. Boley",
+            "S. Tabet",
+            "G. Wagner",
+            "Wil M. P. van der Aalst"
+         ],
+         "title": "Design rationale for ruleml: A markup language for semantic web rules",
+         "year": "2001",
+         "startpage": "381",
+         "endpage": "401",
+         "journal": "SWWWS"
+      },
+      {
+         "author": "F. Kamoun",
+         "title": "A roadmap towards the convergence of business process management and service oriented architecture",
+         "year": "2007",
+         "startpage": "8",
+         "endpage": "14",
+         "journal": "Ubiquity",
+         "publisher": "ACM Press"
+      }
+   ],
+   "book": {
+      "author": [
+         "G. Alonso",
+         "F. Casati",
+         "H. Kuno",
+         "V. Machiraju"
+      ],
+      "title": "Web Service: Concepts, Architecture and Applications",
+      "year": "2001",
+      "publisher": "Springer"
+   },
+   "unpubwork": {
+      "author": [
+         "M. G. Buscemi",
+         "L. Ferrari",
+         "C. Moiso",
+         "U. Montanari"
+      ],
+      "title": "Constraint-based policy negociation and enforcement for telco services",
+      "year": "2007"
+   },
+   "website": [
+      {
+         "url": "http://www.w3.org/Submission/WS‐Policy/",
+         "date": "2006-04-10",
+         "author": "J. Schlimmer",
+         "title": "Web services policy 1.2 – framework (WS‐Policy)."
+      },
+      {
+         "url": "http://www.google.be",
+         "date": "2006-04-15",
+         "author": "H. Boley",
+         "title": "A website without year."
+      }
+   ]
+}

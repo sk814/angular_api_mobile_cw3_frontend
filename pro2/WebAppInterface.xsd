@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="interface">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="package" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+        <xs:element name="extends" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="from" type="xs:string" ></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element  name="import" maxOccurs="unbounded" type="xs:string" ></xs:element>
+        <xs:element  name="abstract_method" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="access_level" type="xs:string" ></xs:element>
+              <xs:element name="arguments">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="parameter">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="type" type="xs:string"></xs:attribute>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="throws">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="exception" type="xs:string" ></xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="return" type="xs:string" ></xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string"></xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:string" ></xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -42,7 +42,6 @@ export class SigninComponent implements OnInit {
     this.router.navigate(["login"]);
    },error=>{
      console.log(error);
-     
      this.errorMsg="USER ALREADY EXIST!";
    })
   }

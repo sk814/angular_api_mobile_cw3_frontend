@@ -22,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <h1 class="display-8 text-primary">Volunteers: </h1>
+                    <h1 class="display-8 text-success">Volunteers: </h1>
                   </div>
                 <div class="col-12 col-md-8">
                 <canvas baseChart
@@ -35,16 +35,16 @@
 
         <br>
                 <div class="col-12 col-md-10">
-                    <h5 class=" text-muted bg-dark">Below data visible post minimum positive threshold (Reached)) </h5>
+                    <h5 class="text-muted">Data visible post minimum positive threshold reached(10) </h5>
                   </div>
                 <div class="col-12 col-md-2">
-                    <h5 class=" text-muted">10 +VE cases</h5>
+                    <h6 class=" text-muted">Now {{totalPositive}} +ve Cases</h6>
             </div>
             <div class="w-100"></div>
 
 
                     <div class="col-12 col-md-10">
-                        <h6 class=" text-primary">The number of positive cases in the vaccinated group: </h6>
+                        <h6 class=" text-success">The number of positive cases in the vaccinated group: </h6>
                       </div>
                     <div class="col-12 col-md-2">
                         <h6 *ngIf="totalPositive>9" >{{ detailsData.positive_vaccinated_group }} (GroupA)</h6>
@@ -53,7 +53,7 @@
                 <div class="w-100"></div>
 
                 <div class="col-12 col-md-10">
-                  <h6 class=" text-primary">The number of positive cases in the unvaccinated group: </h6>
+                  <h6 class=" text-success">The number of positive cases in the unvaccinated group: </h6>
                 </div>
               <div class="col-12 col-md-2">
                   <h6 *ngIf="totalPositive>9">  {{  detailsData.positive_unvaccinated_group }} (GroupB)</h6>
@@ -61,7 +61,7 @@
 
           <div class="w-100"></div>
                         <div class="col-12 col-md-10">
-                            <h6 class=" text-primary">Estimated vaccine efficacy rate (overall, regardless of dose) </h6>
+                            <h6 class=" text-success">Estimated vaccine efficacy rate (overall, regardless of dose) </h6>
                           </div>
                         <div class="col-12 col-md-2">
                             <h6 *ngIf="totalPositive>9">{{  detailsData.efficacy_rate_all }}%</h6>
@@ -70,7 +70,7 @@
                     <div class="w-100"></div>
                     
                             <div class="col-12 col-md-10">
-                                <h6 class=" text-primary">Estimated vaccine efficacy rate (for half dose) </h6>
+                                <h6 class=" text-success">Estimated vaccine efficacy rate (for half dose) </h6>
                               </div>
                             <div class="col-12 col-md-2">
                                 <h6 *ngIf="totalPositive>9">{{  detailsData.efficacy_rate_half_dose }}%</h6>
@@ -78,7 +78,7 @@
                         <div class="w-100"></div>
                     
                         <div class="col-12 col-md-10">
-                            <h6 class=" text-primary">Estimated vaccine efficacy rate (for single dose) </h6>
+                            <h6 class=" text-success">Estimated vaccine efficacy rate (for single dose) </h6>
                           </div>
                         <div class="col-12 col-md-2">
                             <h6 *ngIf="totalPositive>9">{{  detailsData.efficacy_rate_half_full }}%</h6>

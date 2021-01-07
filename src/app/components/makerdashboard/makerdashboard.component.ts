@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class MakerdashboardComponent implements OnInit {
 
-  public doughnutChartLabels = ['Total Vollentries', 'Positive'];
+  public doughnutChartLabels = ['Total Vollentries', 'Positive Reported'];
   public doughnutChartData = [0,];
   public doughnutChartType = 'doughnut' as const;
   public detailsData: any=null;
@@ -38,7 +38,7 @@ export class MakerdashboardComponent implements OnInit {
         this.doughnutChartData= [this.detailsData['totalVolunteer'], this.detailsData['totalPositive']];
         this.totalPositive= this.detailsData['totalPositive'];
       }
-      );
+      )
    // 
   }
 

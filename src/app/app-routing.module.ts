@@ -5,6 +5,7 @@ import { MakerdashboardComponent } from './components/makerdashboard/makerdashbo
 import { MakerloginComponent } from './components/makerlogin/makerlogin.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { VoldashboardComponent } from './components/voldashboard/voldashboard.component';
+// import { AuthguardGuard } from './services/authguard.guard';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: "makerlogin", component: MakerloginComponent},
   { path: "voldashboard", component: VoldashboardComponent},
   { path: "makerdashboard", component: MakerdashboardComponent},
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

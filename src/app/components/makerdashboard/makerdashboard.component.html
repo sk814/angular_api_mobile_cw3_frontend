@@ -1,0 +1,90 @@
+<nav id="topNav" class="clearfix fixed-top navbar navbar-expand-sm navbar-light">
+    <div class="container">
+        <a class="navbar-brand">
+           <h2>
+              <b>
+                <h3 class="text-light bg-dark">Makers Dashboard</h3>
+              </b>
+           </h2>
+        </a>
+
+        <a class="navbar-brand">
+          <div>
+            <button routerLink="/makerlogin" (click)="logout()" class="btn btn-outline-dark" type="submit">Logout</button>
+        </div>
+       </a>
+        </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <h1 class="display-8 text-primary">Volunteers: </h1>
+                  </div>
+                <div class="col-12 col-md-8">
+                <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]='doughnutChartType'>
+                </canvas>
+            </div>
+            <div class="w-100"></div>
+
+        <br>
+                <div class="col-12 col-md-10">
+                    <h5 class=" text-muted bg-dark">Below data visible post minimum positive threshold (Reached)) </h5>
+                  </div>
+                <div class="col-12 col-md-2">
+                    <h5 class=" text-muted">10 +VE cases</h5>
+            </div>
+            <div class="w-100"></div>
+
+
+                    <div class="col-12 col-md-10">
+                        <h6 class=" text-primary">The number of positive cases in the vaccinated group: </h6>
+                      </div>
+                    <div class="col-12 col-md-2">
+                        <h6 *ngIf="totalPositive>9" >{{ detailsData.positive_vaccinated_group }} (GroupA)</h6>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-12 col-md-10">
+                  <h6 class=" text-primary">The number of positive cases in the unvaccinated group: </h6>
+                </div>
+              <div class="col-12 col-md-2">
+                  <h6 *ngIf="totalPositive>9">  {{  detailsData.positive_unvaccinated_group }} (GroupB)</h6>
+          </div>
+
+          <div class="w-100"></div>
+                        <div class="col-12 col-md-10">
+                            <h6 class=" text-primary">Estimated vaccine efficacy rate (overall, regardless of dose) </h6>
+                          </div>
+                        <div class="col-12 col-md-2">
+                            <h6 *ngIf="totalPositive>9">{{  detailsData.efficacy_rate_all }}%</h6>
+                    </div>
+
+                    <div class="w-100"></div>
+                    
+                            <div class="col-12 col-md-10">
+                                <h6 class=" text-primary">Estimated vaccine efficacy rate (for half dose) </h6>
+                              </div>
+                            <div class="col-12 col-md-2">
+                                <h6 *ngIf="totalPositive>9">{{  detailsData.efficacy_rate_half_dose }}%</h6>
+                        </div>
+                        <div class="w-100"></div>
+                    
+                        <div class="col-12 col-md-10">
+                            <h6 class=" text-primary">Estimated vaccine efficacy rate (for single dose) </h6>
+                          </div>
+                        <div class="col-12 col-md-2">
+                            <h6 *ngIf="totalPositive>9">{{  detailsData.efficacy_rate_half_full }}%</h6>
+                    </div>
+
+
+        </div>
+    </div>
+

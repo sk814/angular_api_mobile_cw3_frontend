@@ -1,0 +1,38 @@
+<nav id="topNav" class="clearfix fixed-top navbar navbar-expand-sm navbar-light">
+    <div class="container">
+        <a class="navbar-brand">
+           <h2>
+              <b>
+                <h3 class="text-light bg-dark">Maker Login</h3>
+              </b>
+           </h2>
+        </a>
+        <a class="navbar-brand">
+            <div>
+              <button routerLink="/login" class="btn btn-outline-dark" type="submit">VolunteerLogin</button>
+          </div>
+         </a>
+        </div>
+        </nav>
+<br><br><br>
+    <div class="card mx-auto" style="width: 25rem;">
+   <div class="card-body">
+    <form [formGroup] ="makerloginForm" (ngSubmit)="makerlogin()">
+ 
+    <div class="form-floating mb-5">
+        <label for="username">Username</label>  
+       <input class="form-control" formControlName="username" id="username" type="text"/>
+
+    </div>
+        <div class="form-floating mb-5">
+            <label for="password">Password</label> 
+            <input class="form-control" formControlName="password" id="password" type="password"/>
+             
+        </div>
+        <p *ngIf="errorMsg !=null" class="text-danger"> {{errorMsg}} </p>
+        
+         <div>
+             <button class="btn btn-outline-dark" type="submit" [disabled]="!makerloginForm.valid">MakerLogin</button>
+         </div>
+</form>
+</div></div>
